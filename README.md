@@ -1,7 +1,7 @@
 # MP3 Encoding with LAME
 
 [![Arduino Library](https://img.shields.io/badge/Arduino-Library-blue.svg)](https://www.arduino.cc/reference/en/libraries/)
-[![IDF Component](https://img.shields.io/badge/IDF-Component-blue.svg)](https://github.com/pschatzmann/arduino-liblame)
+[![IDF Component](https://img.shields.io/badge/IDF-Component-blue.svg)](https://github.com/pschatzmann/codec-lame)
 [![CMake](https://img.shields.io/badge/CMake-Supported-blue.svg)](https://cmake.org/)
 
 [LAME](https://lame.sourceforge.io/about.php) is a open source implementation of a MP3 encoder.
@@ -55,14 +55,14 @@ In Arduino, you can download the library as zip and call include Library -> zip 
 
 ```bash
 cd  ~/Documents/Arduino/libraries
-git clone pschatzmann/arduino-liblame.git
+git clone pschatzmann/codec-lame.git
 
 ```
 
 This project can also be built and executed on your desktop with cmake:
 
 ```bash
-cd arduino-liblame
+cd codec-lame
 mkdir build
 cd build
 cmake ..
@@ -71,7 +71,7 @@ make
 
 ### Documentation
 
-- The [Class Documentation can be found here](https://pschatzmann.github.io/arduino-liblame/html/annotated.html)
+- The [Class Documentation can be found here](https://pschatzmann.github.io/codec-lame/html/annotated.html)
 - You can also find some [more information in my dedicated Blog](https://www.pschatzmann.ch/home/2021/08/10/an-mp3-encoder-for-arduino/).
 - I also suggest that you have a look at [my overview Blog](https://www.pschatzmann.ch/home/2021/08/13/audio-decoders-for-microcontrollers/)
 
