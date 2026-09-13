@@ -60,9 +60,11 @@
 #include <unistd.h>
 #endif
 
-#ifdef ESP32 
+#ifdef ESP32
 #include "esp_heap_caps.h"
+#ifdef ARDUINO
 #include "esp32-hal-psram.h"
+#endif
 #endif
 
 #define LAME_DEFAULT_QUALITY 3
@@ -2773,7 +2775,11 @@ void* debug_calloc(int count, int size){
     void* result=NULL;
 #ifdef ESP32
     if ((count * size > ESP_PSRAM_ENABLE_LIMIT) && (ESP_PSRAM_ENABLE_LIMIT > 0)) {
+#ifdef ARDUINO
       result = ps_calloc(count, size); // use psram
+#else
+      result = heap_caps_calloc(count, size, MALLOC_CAP_SPIRAM); // use psram
+#endif
     } else {
       result = calloc(count, size);
     }
