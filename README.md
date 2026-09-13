@@ -1,5 +1,8 @@
 # MP3 Encoding with LAME
 
+[![Arduino Library](https://img.shields.io/badge/Arduino-Library-blue.svg)](https://www.arduino.cc/reference/en/libraries/)
+[![IDF Component](https://img.shields.io/badge/IDF-Component-blue.svg)](https://github.com/pschatzmann/arduino-liblame)
+
 [LAME](https://lame.sourceforge.io/about.php) is a open source implementation of a MP3 encoder.
 This project just reorganized the code to follow Arduino Library conventions, so that you can use it in Arduino and PlatformIO. 
 

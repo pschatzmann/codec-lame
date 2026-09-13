@@ -1,5 +1,16 @@
 cmake_minimum_required(VERSION 3.16)
 
+if (DEFINED ESP_PLATFORM)
+  # idf component
+  idf_component_register(
+      SRC_DIRS src src/liblame src/liblame/vector
+      INCLUDE_DIRS src src/liblame
+  )
+
+  target_compile_options(${COMPONENT_LIB} PUBLIC -Wno-error -DUSE_DEFAULT_STDLIB -Wno-stringop-overflow)
+
+else()
+
 # set the project name
 project(arduino_liblame)
 
@@ -24,4 +35,6 @@ target_include_directories(arduino_liblame PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/sr
 if (BUILD_TESTS)
     add_subdirectory( "${CMAKE_CURRENT_SOURCE_DIR}/examples/encode")
     add_subdirectory( "${CMAKE_CURRENT_SOURCE_DIR}/examples/speed_test")
+endif()
+
 endif()
